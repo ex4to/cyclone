@@ -1,7 +1,9 @@
+import { MainPage } from './MainPage'
+
 export const RootPage = () => {
   return (
     <div>
-      <p>aboba</p>
+      <MainPage />
     </div>
   )
 }
