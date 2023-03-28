@@ -48,10 +48,14 @@ export const getDayTime = (date: string | undefined): getDayTimeRes | null => {
   const res = {
     day: DAYS[dayIdx],
     dayOfMonth: day,
-    month: MONTHS[(+month) - 1],
+    month: MONTHS[+month - 1],
     year,
     time: timeProp,
   }
 
   return res
+}
+
+export const tommHg = (mb: number): number => {
+  return Math.round(mb * 0.75006)
 }

@@ -30,11 +30,42 @@ export const MainPage = ({ w }: { w: ForecastAPI }) => {
           <button className="font-bold">°C</button>|<button>°F</button>
         </div>
       </header>
-      <main className="p-4 flex flex-col gap-4 bg-white bg-opacity-80 mt-[60vh] mb-[40vh]">
-        <BriefWeather current={w.current} location={w.location} />
-        <Hourly />
-      </main>
-      <footer>aboba</footer>
+      {w.forecast.forecastday.map((e, i) =>
+        i === 0 ? (
+          <main
+            key={i}
+            className="p-2 flex flex-col gap-4 bg-white bg-opacity-90 mt-[60vh]"
+          >
+            <BriefWeather weather={w.current} location={w.location} />
+            <Hourly hourly={w.forecast.forecastday[0].hour} />
+          </main>
+        ) : (
+          <main key={i} className="p-2 lg:p-4 flex flex-col gap-4 bg-white bg-opacity-90">
+            <BriefWeather weather={w.forecast.forecastday[i].day} location={w.location} date={w.forecast.forecastday[i].date} />
+            <Hourly hourly={w.forecast.forecastday[i].hour} />
+          </main>
+        )
+      )}
+      <footer>
+        <a href="https://www.flaticon.com/free-icons/humidity" title="humidity icons">
+          Humidity icons created by Pixel perfect - Flaticon
+        </a>
+        <a href="https://www.flaticon.com/free-icons/degrees" title="degrees icons">
+          Degrees icons created by Smashicons - Flaticon
+        </a>
+        <a
+          href="https://www.flaticon.com/free-icons/atmospheric"
+          title="atmospheric icons"
+        >
+          Atmospheric icons created by afif fudin - Flaticon
+        </a>
+        <a
+          href="https://www.flaticon.com/free-icons/cloud-computing"
+          title="cloud computing icons"
+        >
+          Cloud computing icons created by Pixel perfect - Flaticon
+        </a>
+      </footer>
       <div className="fixed -z-20 top-0 left-0 w-full h-screen">
         <img
           className="w-full h-full bg-no-repeat bg-cover"
