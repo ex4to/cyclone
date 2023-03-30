@@ -30,22 +30,31 @@ export const MainPage = ({ w }: { w: ForecastAPI }) => {
           <button className="font-bold">°C</button>|<button>°F</button>
         </div>
       </header>
-      {w.forecast.forecastday.map((e, i) =>
-        i === 0 ? (
-          <main
-            key={i}
-            className="p-2 flex flex-col gap-4 bg-white bg-opacity-90 mt-[60vh]"
-          >
-            <BriefWeather weather={w.current} location={w.location} />
-            <Hourly hourly={w.forecast.forecastday[0].hour} />
-          </main>
-        ) : (
-          <main key={i} className="p-2 lg:p-4 flex flex-col gap-4 bg-white bg-opacity-90">
-            <BriefWeather weather={w.forecast.forecastday[i].day} location={w.location} date={w.forecast.forecastday[i].date} />
-            <Hourly hourly={w.forecast.forecastday[i].hour} />
-          </main>
-        )
-      )}
+      <main className='flex flex-col 2xl:flex-row gap-4 justify-center items-center w-full'>
+        {w.forecast.forecastday.map((e, i) =>
+          i === 0 ? (
+            <section
+              key={i}
+              className="p-2 flex flex-col gap-4 bg-white bg-opacity-90 mt-[60vh] 2xl:max-w-xl w-full"
+            >
+              <BriefWeather weather={w.current} location={w.location} />
+              <Hourly hourly={w.forecast.forecastday[0].hour} />
+            </section>
+          ) : (
+            <section
+              key={i}
+              className="p-2 lg:p-4 flex flex-col gap-4 bg-white bg-opacity-90 2xl:mt-[60vh] 2xl:max-w-xl mt-0 w-full"
+            >
+              <BriefWeather
+                weather={w.forecast.forecastday[i].day}
+                location={w.location}
+                date={w.forecast.forecastday[i].date}
+              />
+              <Hourly hourly={w.forecast.forecastday[i].hour} />
+            </section>
+          )
+        )}
+      </main>
       <footer>
         <a href="https://www.flaticon.com/free-icons/humidity" title="humidity icons">
           Humidity icons created by Pixel perfect - Flaticon
