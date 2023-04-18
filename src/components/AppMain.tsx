@@ -16,7 +16,7 @@ export const AppMain = ({ w }: { w: ForecastAPI }) => {
   }
 
   return (
-    <main className="px-8">
+    <main className="px-2 md:px-8">
       <Carousel responsive={responsive}>
         {w.forecast.forecastday.map((e, i) =>
           i === 0 ? (

@@ -16,7 +16,7 @@ export const AppHeader = ({ title }: { title: string }) => {
           </div>
           <p className="text-gray-600">
             Weather in{' '}
-            <Link to="search" className="text-black text-bold">
+            <Link to="/search" className="text-black text-bold">
               {title}
             </Link>
           </p>

@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 
 export const RootPage = () => {
   const [weather, setWeather] = useState<null | ForecastAPI>(null)
-  const params = useParams();
+  const params = useParams()
 
   useEffect(() => {
     getForecastWeather(params.cityUrl || 'auto:ip', false, false)

@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: '/:cityUrl',
     element: <RootPage />,
     children: [],
-  }
+  },
 ])
 
 const App = () => {
