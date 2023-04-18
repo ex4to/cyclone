@@ -1,2 +1,3 @@
 export * from './RootPage'
-export * from './MainPage'
+export * from './ForecastPage'
+export * from './SearchPage'

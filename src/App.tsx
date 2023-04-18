@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { RecoilRoot } from 'recoil'
-import { RootPage } from './pages'
+import { RootPage, SearchPage } from './pages'
 
 const router = createBrowserRouter([
   {
@@ -8,6 +8,16 @@ const router = createBrowserRouter([
     element: <RootPage />,
     children: [],
   },
+  {
+    path: '/search',
+    element: <SearchPage />,
+    children: [],
+  },
+  {
+    path: '/:cityUrl',
+    element: <RootPage />,
+    children: [],
+  }
 ])
 
 const App = () => {

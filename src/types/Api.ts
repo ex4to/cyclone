@@ -1,11 +1,4 @@
-import {
-  Astronomy,
-  CurrentWeather,
-  ForecastDay,
-  HourWeather,
-  UserLocation,
-  WeatherAlerts,
-} from './Common'
+import { CurrentWeather, Forecast, UserLocation, WeatherAlerts } from './Common'
 
 export type RealTimeAPI = {
   current: CurrentWeather
@@ -20,13 +13,7 @@ export type ForecastAPI = {
   current: CurrentWeather
   location: UserLocation
   forecast: {
-    forecastday: {
-      date: string
-      date_epoch: number
-      day: ForecastDay
-      astro: Astronomy
-      hour: HourWeather[]
-    }[]
+    forecastday: Forecast[]
   }
 }
 

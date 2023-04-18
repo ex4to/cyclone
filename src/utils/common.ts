@@ -56,6 +56,5 @@ export const getDayTime = (date: string | undefined): getDayTimeRes | null => {
   return res
 }
 
-export const tommHg = (mb: number): number => {
-  return Math.round(mb * 0.75006)
-}
+export const tommHg = (mb: number): number => Math.round(mb * 0.75006)
+export const round = (temp: number): number => Math.round(temp)

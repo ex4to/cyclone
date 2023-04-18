@@ -1,5 +1,5 @@
 import { HourWeather } from '@/types'
-import { getDayTime } from '@/utils'
+import { getDayTime, round } from '@/utils'
 
 export const Hourly = ({ hourly }: { hourly: HourWeather[] }) => {
   return (
@@ -12,7 +12,7 @@ export const Hourly = ({ hourly }: { hourly: HourWeather[] }) => {
               <img src={e.condition.icon} alt="icon" />
             </div>
             <p>{getDayTime(e.time)?.time}</p>
-            <p>{e.temp_c}°</p>
+            <p>{round(+e.temp_c)}°</p>
           </div>
         ))}
       </section>

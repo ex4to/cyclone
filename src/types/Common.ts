@@ -25,6 +25,14 @@ export type WeatherAlerts = {
   instruction: string
 }
 
+export type Forecast = {
+  date: string
+  date_epoch: number
+  day: ForecastDay
+  astro: Astronomy
+  hour: HourWeather[]
+}
+
 export type AirQuality = {
   co: number
   o3: number
@@ -127,4 +135,10 @@ export type ForecastDay = {
   avghumidity: number
   condition: DayCondition
   uv: number
+}
+
+export enum LOAD_SIZE {
+  SMALL = 0,
+  MEDIUM,
+  LARGE,
 }
