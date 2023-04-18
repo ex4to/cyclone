@@ -20,7 +20,7 @@ export const WeatherCard = ({ cur, loc, forecast }: WeatherCardProps) => {
         <p>{currentDate?.time ? currentDate?.time : ''}</p>
       </header>
 
-      <main className="text-lg flex flex-col gap-4 h-full justify-between py-8">
+      <main className="text-lg flex flex-col gap-2 md:gap-4 h-full justify-between">
         <section className="grid grid-cols-2 items-center">
           <div className="flex flex-col items-center text-xl">
             <img
@@ -40,7 +40,9 @@ export const WeatherCard = ({ cur, loc, forecast }: WeatherCardProps) => {
           <p>Humidity: {cur ? cur.humidity : forecast.day.avghumidity}%</p>
           <p>{cur ? 'Pressure: ' + tommHg(cur.pressure_mb) + 'mmHg' : ''}</p>
         </section>
-        <Hourly hourly={forecast.hour} />
+        <div className="p-2">
+          <Hourly hourly={forecast.hour} />
+        </div>
       </main>
     </section>
   )

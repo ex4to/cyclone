@@ -9,7 +9,9 @@ export const AppHeader = ({ title }: { title: string }) => {
         <Link to="/" className="w-10">
           <Tornado />
         </Link>
-        <h1 className="hidden md:block text-2xl font-bold uppercase tracking-wide">Cyclone</h1>
+        <h1 className="hidden md:block text-2xl font-bold uppercase tracking-wide">
+          Cyclone
+        </h1>
         <div className="pl-20 flex gap-2 grow justify-end">
           <div className="w-6">
             <Location />
