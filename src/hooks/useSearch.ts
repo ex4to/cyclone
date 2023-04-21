@@ -1,4 +1,4 @@
-import { getSearch } from '@/api'
+import { getSearch } from '@/services'
 import { SearchAPI } from '@/types'
 import { useEffect, useState } from 'react'
 

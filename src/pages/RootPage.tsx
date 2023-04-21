@@ -1,4 +1,4 @@
-import { getForecastWeather } from '@/api'
+import { getForecastWeather } from '@/services'
 import { ForecastAPI } from '@/types'
 import { useEffect, useState } from 'react'
 import { ForecastPage } from './ForecastPage'

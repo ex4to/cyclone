@@ -12,7 +12,7 @@ export const WeatherCard = ({ cur, loc, forecast }: WeatherCardProps) => {
   const currentDate = getDayTime(loc?.localtime ? loc?.localtime : forecast.date)
 
   return (
-    <section className="bg-opacity-90 bg-sky-50 rounded-sm p-4 h-full">
+    <section className="bg-opacity-90 bg-sky-50 rounded-sm p-4 h-full flex flex-col gap-2">
       <header className="flex justify-between text-2xl">
         <p>
           {currentDate?.dayOfMonth} of {currentDate?.month} - {currentDate?.day}
@@ -26,7 +26,7 @@ export const WeatherCard = ({ cur, loc, forecast }: WeatherCardProps) => {
             <img
               src={cur ? cur.condition.icon : forecast.day.condition.icon}
               className="w-20"
-            />
+              />
             <p>{cur ? cur.condition.text : forecast.day.condition.text}</p>
           </div>
           <div>
